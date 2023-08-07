@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parth's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles */
+    .section {
+      padding: 80px 0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .project, .review {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h1 class="fade-in">About Me</h1>
+      <p class="fade-in">Welcome to my portfolio! I am passionate about creating amazing web.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h1 class="fade-in">Projects</h1>
+      <div class="project fade-in">
+        <h2>Project 1</h2>
+        <p>Description of project 1.</p>
+      </div>
+      <div class="project fade-in">
+        <h2>Project 2</h2>
+        <p>Description of project 2.</p>
+      </div>
+      <!-- Add more project divs as needed -->
+    </div>
+  </section>
+
+  <section id="reviews" class="section">
+    <div class="container">
+      <h1 class="fade-in">Reviews</h1>
+      <div class="review fade-in">
+        <blockquote>"Parth's work is outstanding! He delivered exactly what we needed."</blockquote>
+        <p>- Client A</p>
+      </div>
+      <div class="review fade-in">
+        <blockquote>"I'm amazed by Parth's creativity and attention to detail. Highly recommended."</blockquote>
+        <p>- Client B</p>
+      </div>
+      <!-- Add more review divs as needed -->
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h1 class="fade-in">Contact Me</h1>
+      <p class="fade-in">Feel free to get in touch with me through email: parth@example.com</p>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <h1 class="fade-in">Skills</h1>
+      <p class="fade-in">Here are some of my skills and expertise:</p>
+      <ul class="fade-in">
+        <li>Web Development</li>
+        <li>Front-end Frameworks (e.g., React, Angular)</li>
+        <li>UI/UX Design</li>
+        <li>Responsive Design</li>
+        <!-- Add more skills as needed -->
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Parth's Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Activate fade-in animation on scroll
+    const sections = document.querySelectorAll('.fade-in');
+    const options = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    })
+  </script>
+</body>
+</html>
